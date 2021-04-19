@@ -1,0 +1,22 @@
+header {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #a1aed8;
+  /* background-color: whitesmoke; */
+  
+  background-image: url("../images/diagmonds-light.png");
+}
+.avatar {
+  max-width: 50%;
+}
+
+aligner-item-left{
+  align-self: flex-start;
+}
+aligner-item-right{
+  align-self: flex-end;
+}
