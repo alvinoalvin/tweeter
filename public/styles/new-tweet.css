@@ -14,7 +14,11 @@
   resize: none;
   height:200px;
 }
-
+.new-tweet textarea:focus{
+  border-radius: 10px;
+  border: solid 0.1px rgb(218, 217, 217);
+  outline:none;
+}
 .new-tweet button {
   color: white;
   font-family: "Bungee", cursive;
