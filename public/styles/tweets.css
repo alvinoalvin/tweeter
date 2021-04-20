@@ -1,0 +1,33 @@
+.container .tweet-container .tweet{
+  border: solid 5px;
+}
+
+.container .tweet-container .tweet:hover{
+  box-shadow: 5px 10px #a1aed8;
+}
+
+.container .tweet-container .tweet-header .user-id {
+  /* justify-content: center; */
+  color: #aeaeb3;
+}
+
+.container .tweet-container .tweet-header .fa-user-circle {
+  font-size: 30px;
+  margin-left:0 10px;
+}
+.container .tweet-container .tweet-main {
+  border-bottom: solid 4px;
+  font-weight: 600;
+}
+
+.container .tweet-container .tweet-footer {
+  font-size: medium;
+}
+
+.container .tweet-container .tweet-footer .fas {
+  color: #4056a1;
+}
+
+.container .tweet-container .tweet-footer .fas:hover {
+  color: #a8894b;
+}
