@@ -1,0 +1,18 @@
+nav {
+  background-color: #4056a1;
+  color: white;
+}
+nav .logo {
+  font-family: "Bungee", cursive;
+  padding: 1.5em;
+  font-size: xx-large;
+}
+nav .right {
+  padding: 1.5em;
+  text-align: center;
+  font-size:28px
+}
+nav .right .fa-angle-double-down {
+  color: #293764;
+  padding-top:5px
+}

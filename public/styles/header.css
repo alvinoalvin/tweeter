@@ -6,8 +6,7 @@ header {
   align-items: center;
   justify-content: center;
   background-color: #a1aed8;
-  /* background-color: whitesmoke; */
-  
+
   background-image: url("../images/diagmonds-light.png");
 }
 .avatar {
