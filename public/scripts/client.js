@@ -10,6 +10,12 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
+const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    $(".tweet-container").append(createTweetElement(tweet));
+  }
+}
+
 const createTweetElement = (tweet) => {
   return $(`
     <article class="tweet" id = custom>
