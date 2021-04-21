@@ -5,6 +5,10 @@ $(document).ready(function() {
     console.log(counter);
     counter.innerHTML = (140 - this.textLength);
 
+    console.log(timeAgo(new Date())); // just now
+    console.log(timeAgo(Date.now() + 3 * 60 * 60 * 1000));
+
+
     if (counter.innerHTML < 0) {
       counter.style.color = "red";
     }
