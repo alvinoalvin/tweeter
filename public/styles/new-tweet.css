@@ -17,6 +17,18 @@
   resize: none;
   height: 200px;
 }
+.new-tweet #new-tweet-error {
+  background-color: #fce4e4;
+  border: 1px solid #fcc2c3;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: rgb(173, 14, 14);
+  font-size: large;
+  font-weight: bold;
+  margin-top:3px;
+}
+
 .new-tweet textarea:focus {
   border-radius: 10px;
   border: solid 0.1px rgb(218, 217, 217);

@@ -5,7 +5,7 @@ const renderTweets = (tweets) => {
 }
 
 const createTweetElement = (tweet) => {
-  return $(`
+  return (`
     <article class="tweet" id = custom>
       <div class="tweet-header">
         <div class="Name">
@@ -14,7 +14,7 @@ const createTweetElement = (tweet) => {
         </div>
         <div class="user-id">${tweet.user.handle}</div>
       </div>
-      <div class="tweet-main">${tweet.content.text}</div>
+      <div class="tweet-main">${document.createTextNode(tweet.content.text).textContent}</div>
       <div class="tweet-footer">
         <div
           class="need_to_be_rendered"
@@ -26,11 +26,11 @@ const createTweetElement = (tweet) => {
           <i class="fas fa-heart"></i>
         </div>
       </div>
-    </article>`
-  )
+    </article>`)
 };
 
 $(document).ready(() => {
+  // HELPERS
   const loadTweets = () => {
     $.ajax({ method: "GET", url: "/tweets" })
       .then((data) => {
@@ -46,6 +46,7 @@ $(document).ready(() => {
       url: "/tweets",
       data: $(input).serialize(),
     }).then(() => {
+      $("#new-tweet-error").hide();
       loadTweets();
     }).fail((data) => {
       console.log("Failure on form submission: ", data);
@@ -53,26 +54,34 @@ $(document).ready(() => {
   };
 
   const isValidMsg = (input) => {
+    let outputError = (errorText, errorDiv) => {
+      errorDiv.text(errorText);
+      errorDiv.slideDown();
+    }
     let isValid = true;
+    const errorDiv = $("#new-tweet-error");
+
     if (input === null || input === "") {
-      alert("value is empty");
+      outputError("value is empty", errorDiv);
       isValid = false;
     }
     if (input.length > 140) {
-      alert("message has exceeded the character limit.");
+      errorDiv.text("message has exceeded the character limit.", errorDiv);
       isValid = false;
     }
     return isValid;
   };
 
+  // MAIN
+  $("#new-tweet-error").hide();
   loadTweets();
-
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     if (isValidMsg($("#tweet-text")[0].value)) {
       addToDatabase(this);
     }
     $("#tweet-text")[0].value = "";
+    $("#new-tweet-counter")[0].innerHTML = 140;
   });
 
   $(".need_to_be_rendered").each((index, element) => {

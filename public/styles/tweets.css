@@ -1,7 +1,6 @@
 .container .tweet-container .tweet{
   border: solid 5px;
 }
-
 .container .tweet-container .tweet:hover{
   box-shadow: 5px 10px #c5d0f5;
 }
