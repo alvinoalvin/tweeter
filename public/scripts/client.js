@@ -1,6 +1,6 @@
 /* unable to timeAgo.js please talk to Joe Lee. */
 $(document).ready(() => {
-  $(".need_to_be_rendered").each((index, element) => {
+  $(".need_to_be_rendered").each((element) => {
     let currentTime = new Date();
     let elemTime = Date.parse(element.attributes.datetime.value);
     let dateTime = currentTime.getTime() - elemTime;
