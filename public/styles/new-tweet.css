@@ -2,22 +2,25 @@
   display: flex;
   flex-direction: column;
 }
-.new-tweet label {
+/* .new-tweet label { */
+.new-tweet h2 {
   border-bottom: solid 4px;
   font-weight: bolder;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  /* padding-bottom: 5px; */
 }
 .new-tweet textarea {
-  margin: 15px 0;
+  margin-top: 5px;
+  margin-bottom: 15px;
   border: 0;
   border-radius: 10px;
   resize: none;
-  height:200px;
+  height: 200px;
 }
-.new-tweet textarea:focus{
+.new-tweet textarea:focus {
   border-radius: 10px;
   border: solid 0.1px rgb(218, 217, 217);
-  outline:none;
+  outline: none;
 }
 .new-tweet button {
   color: white;
