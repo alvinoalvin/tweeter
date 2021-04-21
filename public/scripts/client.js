@@ -1,6 +1,6 @@
 const renderTweets = (tweets) => {
   for (const tweet of tweets) {
-    $(".tweet-container").append(createTweetElement(tweet));
+    $(".tweet-container").prepend(createTweetElement(tweet));
   }
 }
 
@@ -58,7 +58,6 @@ $(document).ready(() => {
       alert("value is empty");
       isValid = false;
     }
-    console.log(input.split(""))
     if (input.length > 140) {
       alert("message has exceeded the character limit.");
       isValid = false;
@@ -73,7 +72,7 @@ $(document).ready(() => {
     if (isValidMsg($("#tweet-text")[0].value)) {
       addToDatabase(this);
     }
-    $("#new-tweet-form").value = "";
+    $("#tweet-text")[0].value = "";
   });
 
   $(".need_to_be_rendered").each((index, element) => {
