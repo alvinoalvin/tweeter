@@ -1,16 +1,4 @@
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
-
-const renderTweets = function(tweets) {
+const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     $(".tweet-container").append(createTweetElement(tweet));
   }
@@ -42,12 +30,54 @@ const createTweetElement = (tweet) => {
   )
 };
 
-const $tweet = createTweetElement(tweetData);
-
 $(document).ready(() => {
-  $(".tweet-container").append($tweet)
+  const loadTweets = () => {
+    $.ajax({ method: "GET", url: "/tweets" })
+      .then((data) => {
+        renderTweets(data);
+      })
+      .fail((data) => {
+        console.log("Failure on loadtweets function: ", data)
+      });
+  };
+  const addToDatabase = (input) => {
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(input).serialize(),
+    }).then(() => {
+      loadTweets();
+    }).fail((data) => {
+      console.log("Failure on form submission: ", data);
+    });
+  };
+
+  const isValidMsg = (input) => {
+    let isValid = true;
+    if (input === null || input === "") {
+      alert("value is empty");
+      isValid = false;
+    }
+    console.log(input.split(""))
+    if (input.length > 140) {
+      alert("message has exceeded the character limit.");
+      isValid = false;
+    }
+    return isValid;
+  };
+
+  loadTweets();
+
+  $("#new-tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    if (isValidMsg($("#tweet-text")[0].value)) {
+      addToDatabase(this);
+    }
+    $("#new-tweet-form").value = "";
+  });
+
   $(".need_to_be_rendered").each((index, element) => {
     element.innerText = timeago.format(element.attributes.datetime.value);
-
   });
+
 });
