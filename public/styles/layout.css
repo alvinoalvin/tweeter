@@ -85,9 +85,25 @@ header {
   justify-content: space-between;
   margin-top: 20px;
 }
-
+#to-top {
+  position: fixed;
+  color: #101525;
+  bottom: 2em;
+  right: 2em;
+  text-align: center;
+  display: none;
+}
+#to-top :visited {
+  color: #101525;
+}
+#to-top a :hover {
+  color: #49557c;
+}
 @media only screen and (max-width: 1200px) {
   #body_container {
     width: 100%;
+  }
+  #to-top {
+    display: none;
   }
 }
