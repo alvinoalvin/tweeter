@@ -4,19 +4,15 @@
 header {
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 20px;
   @include mixins.flexColCenter();
   background-color: variables.$header-bgc;
   background-image: variables.$header-bg-img;
   text-align: center;
 }
 
-// @media only screen and (min-width: 1200px) {
-//   header{
-//     height:auto;
-//     width:20vw;
-//   }
-//   main{
-//     width:50vw;
-//   }
-// }
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 80%;
+  }
+}

@@ -53,7 +53,13 @@ body .container .tweet-container {
 body .container .tweet-container .tweet {
   border: solid 5px;
   padding: 20px;
-  margin: 20px 0px;
+  margin: 10px 0;
+}
+body .container .tweet-container .tweet:first-child {
+  margin: 20px 0 0 0;
+}
+body .container .tweet-container .tweet:last-child {
+  margin: 0 0 20px 0;
 }
 body .container .tweet-container .tweet-header {
   display: flex;
@@ -84,12 +90,14 @@ body #to-top a:visited {
 body #to-top a:hover {
   color: #49557c;
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1024px) {
   body #to-top {
     display: none;
   }
   body #body_container {
-    width: 1300px;
+    width: 75%;
+    min-width: 1000px;
+    max-width: 1300px;
     display: grid;
     grid-template-areas: "nav nav" "header container";
   }
@@ -101,10 +109,10 @@ body #to-top a:hover {
     margin-top: 20px;
     grid-area: header;
     height: auto;
-    width: 500px;
+    width: 490px;
   }
   body #body_container .container {
-    width: 700px;
+    width: 490px;
     grid-area: container;
   }
 }

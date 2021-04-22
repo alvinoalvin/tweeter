@@ -1,12 +1,13 @@
+@use 'variables';
+
 .container .tweet-container .tweet {
   border: solid 5px;
   &:hover {
-    box-shadow: 5px 10px #c5d0f5;
+    box-shadow: 5px 10px variables.$tweet-shadow;
   }
   .tweet-header {
     .user-id {
-      /* justify-content: center; */
-      color: #aeaeb3;
+      color: variables.$tweet-user-id;
     }
     .fa-user-circle {
       font-size: 30px;

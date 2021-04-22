@@ -54,7 +54,13 @@ body {
       .tweet {
         border: solid 5px;
         padding: 20px;
-        margin: 20px 0px;
+        margin: 10px 0;
+        &:first-child {
+          margin: 20px 0 0 0;
+        }
+        &:last-child {
+          margin: 0 0 20px 0;
+        }
       }
       .tweet-header {
         @include mixins.flexRow();
@@ -84,12 +90,14 @@ body {
       color: variables.$to-top-icon-hover;
     }
   }
-  @media only screen and (min-width: 1300px) {
+  @media only screen and (min-width: 1024px) {
     #to-top {
       display: none;
     }
     #body_container {
-    width: 1300px;
+      width: 75%;
+      min-width: 1000px;
+      max-width: 1300px;
       display: grid;
       grid-template-areas:
         "nav nav"
@@ -102,10 +110,10 @@ body {
         margin-top: 20px;
         grid-area: header;
         height: auto;
-        width: 500px;
+        width: 490px;
       }
       .container {
-        width: 700px;
+        width: 490px;
         grid-area: container;
         // width:40vw;
         // margin:30px;
