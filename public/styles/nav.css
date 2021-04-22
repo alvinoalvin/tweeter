@@ -12,8 +12,8 @@ nav .logo {
   font-size: xx-large;
 }
 nav .right {
-  padding: 1.5em;
-  font-size: 28px;
+  padding: 2em;
+  font-size: 20px;
   text-align: center;
 }
 nav .right .fas {
@@ -23,4 +23,11 @@ nav .right .fas {
 nav .right .fas:hover {
   color: #192346;
   padding-top: 5px;
+}
+
+@media only screen and (min-width: 700px) {
+  nav .right {
+    padding: 1em 2em;
+    font-size: 28px;
+  }
 }
