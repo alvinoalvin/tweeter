@@ -52,7 +52,9 @@
 
         <div class="right">
           <div><b> Write </b>a new tweet</div>
-          <div><i class="fas fa-angle-double-down"></i></div>
+          <div class="write-tweet-arrow">
+            <i class="fas fa-angle-double-down"></i>
+          </div>
         </div>
       </nav>
 
@@ -76,8 +78,6 @@
           <div id="new-tweet-error">this is an error</div>
           <h2>Compose Tweet</h2>
           <form id="new-tweet-form" action="/tweets" method="POST">
-            <!-- <label for="tweet-text">What are you humming about?</label>  Moved to placeholder-->
-
             <textarea
               name="text"
               id="tweet-text"
@@ -90,7 +90,6 @@
                 class="counter"
                 id="new-tweet-counter"
                 for="tweet-text"
-                defaultValue="140"
                 >140
               </output>
             </div>

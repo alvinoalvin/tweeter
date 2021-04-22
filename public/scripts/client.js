@@ -73,7 +73,6 @@ $(document).ready(() => {
   };
 
   // MAIN
-  $("#new-tweet-error").hide();
   loadTweets();
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -84,8 +83,21 @@ $(document).ready(() => {
     $("#new-tweet-counter")[0].innerHTML = 140;
   });
 
+  $(".right").on("click", function(event) {
+    $(".new-tweet").slideToggle("slow", (() => {
+      if ($(".new-tweet").css("display") === "block") {
+        $(".write-tweet-arrow").html(`<i class="fas fa-angle-double-up"></i>`);
+        $("#tweet-text").focus();
+      }
+      else {
+        $(".write-tweet-arrow").html(`<i class="fas fa-angle-double-down"></i>`);
+      }
+    }));
+  });
+
   $(".need_to_be_rendered").each((index, element) => {
     element.innerText = timeago.format(element.attributes.datetime.value);
   });
+
 
 });

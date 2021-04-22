@@ -15,7 +15,12 @@ nav .right {
   text-align: center;
   font-size: 28px;
 }
-nav .right .fa-angle-double-down {
+nav .right .fas {
   color: #293764;
+  padding-top: 5px;
+}
+
+nav .right .fas:hover{
+  color: #192346;
   padding-top: 5px;
 }

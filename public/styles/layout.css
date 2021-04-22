@@ -49,6 +49,14 @@ header {
   margin: auto;
 }
 
+.container .new-tweet {
+  display: none;
+}
+
+.container #new-tweet-error {
+  display: none;
+}
+
 .container .tweet-container {
   display: flex;
   flex-direction: column;

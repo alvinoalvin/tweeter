@@ -1,14 +1,16 @@
 $(document).ready(function() {
 
-  $("#tweet-text").on('keyup ', function() {
-    let counter = $("div").children()[8];
-    counter.innerHTML = (140 - this.textLength);
-    
-    if (counter.innerHTML < 0) {
-      counter.style.color = "red";
+  $("#tweet-text").on('keypress ', function() {
+    let max = 140;
+    let counter = $("#new-tweet-counter")[0];
+    console.log(counter)
+    counter.innerHTML = (max - this.textLength);
+
+    if (this.textLength > max) {
+      $("#new-tweet-counter").css("color", "red");
     }
     else {
-      counter.style.color = "#545149";
+      $("#new-tweet-counter").css("color", "#545149");
     }
   });
 });
