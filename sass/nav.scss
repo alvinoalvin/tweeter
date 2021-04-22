@@ -1,0 +1,39 @@
+@use 'variables';
+@use 'mixins';
+
+nav {
+  background-color: variables.$nav-bgc;
+  color: variables.$nav-color;
+  position: sticky;
+  position: -webkit-sticky; /* support for safari */
+  top: 0;
+  .logo {
+    font-family: "Bungee", cursive;
+    padding: 1.5em;
+    font-size: xx-large;
+  }
+
+  .right {
+    padding: 1.5em;
+    font-size: 28px;
+    text-align: center;
+
+    .fas {
+      @mixin colorTopPad($color, $topPad) {
+        color: $color;
+        padding-top: $topPad;
+      }
+
+      @include colorTopPad(variables.$nav-fas, 5px);
+
+      &:hover {
+        @include colorTopPad(variables.$nav-fas-hover, 5px);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1300px) {
+  nav {
+    
+  }
+}

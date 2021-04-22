@@ -1,0 +1,15 @@
+@mixin flexRow() {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@mixin flexCol() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColCenter() {
+  @include flexCol();
+  align-items: center;
+  justify-content: center;
+}

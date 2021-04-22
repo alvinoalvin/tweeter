@@ -1,32 +1,27 @@
-.container .tweet-container .tweet{
+.container .tweet-container .tweet {
   border: solid 5px;
 }
-.container .tweet-container .tweet:hover{
+.container .tweet-container .tweet:hover {
   box-shadow: 5px 10px #c5d0f5;
 }
-
-.container .tweet-container .tweet-header .user-id {
+.container .tweet-container .tweet .tweet-header .user-id {
   /* justify-content: center; */
   color: #aeaeb3;
 }
-
-.container .tweet-container .tweet-header .fa-user-circle {
+.container .tweet-container .tweet .tweet-header .fa-user-circle {
   font-size: 30px;
-  margin-left:0 10px;
+  margin-left: 0 10px;
 }
-.container .tweet-container .tweet-main {
+.container .tweet-container .tweet .tweet-main {
   border-bottom: solid 4px;
   font-weight: 600;
 }
-
-.container .tweet-container .tweet-footer {
+.container .tweet-container .tweet .tweet-footer {
   font-size: medium;
 }
-
-.container .tweet-container .tweet-footer .fas {
+.container .tweet-container .tweet .tweet-footer .fas {
   color: #464f6e;
 }
-
-.container .tweet-container .tweet-footer .fas:hover {
+.container .tweet-container .tweet .tweet-footer .fas:hover {
   color: #a8894b;
 }

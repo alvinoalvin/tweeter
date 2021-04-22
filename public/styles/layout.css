@@ -3,89 +3,74 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
-  box-sizing: border-box;
-}
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+html {
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   background-color: #293764;
 }
-
-#body_container {
+body #body_container {
   color: #545149;
   background-color: #f4f1ec;
-  width: 1170px;
+  width: 100%;
   margin: auto;
 }
-
-nav {
-  z-index: 0;
+body nav {
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   height: 120px;
   width: 100%;
 }
-
-header {
+body header {
   z-index: 1;
 }
-
-.container {
+body .container {
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: auto;
 }
-
-.container .new-tweet {
+body .container #new-tweet {
   display: none;
 }
-
-.container #new-tweet-error {
+body .container #new-tweet #new-tweet-error {
   display: none;
 }
-
-.container .tweet-container {
+body .container .tweet-container {
   display: flex;
   flex-direction: column;
 }
-
-.container .tweet-container .tweet {
+body .container .tweet-container .tweet {
   border: solid 5px;
   padding: 20px;
   margin: 20px 0px;
 }
-
-.container .tweet-container .tweet-header {
+body .container .tweet-container .tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.container .tweet-container .tweet-main {
+body .container .tweet-container .tweet-main {
   padding-bottom: 20px;
   padding-top: 40px;
 }
-
-.container .tweet-container .tweet-footer {
+body .container .tweet-container .tweet-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
 }
-#to-top {
+body #to-top {
   position: fixed;
   color: #101525;
   bottom: 2em;
@@ -93,17 +78,33 @@ header {
   text-align: center;
   display: none;
 }
-#to-top :visited {
+body #to-top a:visited {
   color: #101525;
 }
-#to-top a :hover {
+body #to-top a:hover {
   color: #49557c;
 }
-@media only screen and (max-width: 1200px) {
-  #body_container {
-    width: 100%;
-  }
-  #to-top {
+@media only screen and (min-width: 1300px) {
+  body #to-top {
     display: none;
+  }
+  body #body_container {
+    width: 1300px;
+    display: grid;
+    grid-template-areas: "nav nav" "header container";
+  }
+  body #body_container nav {
+    grid-area: nav;
+  }
+  body #body_container #header-container {
+    margin: auto;
+    margin-top: 20px;
+    grid-area: header;
+    height: auto;
+    width: 500px;
+  }
+  body #body_container .container {
+    width: 700px;
+    grid-area: container;
   }
 }

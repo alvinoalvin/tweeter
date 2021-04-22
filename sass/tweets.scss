@@ -1,0 +1,29 @@
+.container .tweet-container .tweet {
+  border: solid 5px;
+  &:hover {
+    box-shadow: 5px 10px #c5d0f5;
+  }
+  .tweet-header {
+    .user-id {
+      /* justify-content: center; */
+      color: #aeaeb3;
+    }
+    .fa-user-circle {
+      font-size: 30px;
+      margin-left: 0 10px;
+    }
+  }
+  .tweet-main {
+    border-bottom: solid 4px;
+    font-weight: 600;
+  }
+  .tweet-footer {
+    font-size: medium;
+    .fas {
+      color: #464f6e;
+      &:hover {
+        color: #a8894b;
+      }
+    }
+  }
+}

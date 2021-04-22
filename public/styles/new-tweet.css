@@ -1,15 +1,13 @@
-.new-tweet form {
+#new-tweet form {
   display: flex;
   flex-direction: column;
 }
-/* .new-tweet label { */
-.new-tweet h2 {
+#new-tweet h2 {
   border-bottom: solid 4px;
   font-weight: bolder;
   padding-bottom: 15px;
-  /* padding-bottom: 5px; */
 }
-.new-tweet textarea {
+#new-tweet textarea {
   margin-top: 5px;
   margin-bottom: 15px;
   border: 0;
@@ -17,31 +15,30 @@
   resize: none;
   height: 200px;
 }
-.new-tweet #new-tweet-error {
-  background-color: #fce4e4;
-  border: 1px solid #fcc2c3;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  color: rgb(173, 14, 14);
-  font-size: large;
-  font-weight: bold;
-  margin-top:3px;
-}
-
-.new-tweet textarea:focus {
+#new-tweet textarea:focus {
   border-radius: 10px;
-  border: solid 0.1px rgb(218, 217, 217);
+  border: solid 0.1px white;
   outline: none;
 }
-.new-tweet button {
+#new-tweet button {
   color: white;
   font-family: "Bungee", cursive;
   font-size: larger;
   background-color: #4056a1;
   border: none;
 }
-#new-tweet-bottom {
+#new-tweet #new-tweet-error {
+  background-color: #fce4e4;
+  border: 1px solid #fcc2c3;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: #ad0e0e;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 3px;
+}
+#new-tweet #new-tweet-bottom {
   font-family: "Bungee", cursive;
   display: flex;
   justify-content: space-between;

@@ -2,7 +2,8 @@ nav {
   background-color: #4056a1;
   color: white;
   position: sticky;
-  position: -webkit-sticky; /* support for safari */
+  position: -webkit-sticky;
+  /* support for safari */
   top: 0;
 }
 nav .logo {
@@ -12,15 +13,14 @@ nav .logo {
 }
 nav .right {
   padding: 1.5em;
-  text-align: center;
   font-size: 28px;
+  text-align: center;
 }
 nav .right .fas {
   color: #293764;
   padding-top: 5px;
 }
-
-nav .right .fas:hover{
+nav .right .fas:hover {
   color: #192346;
   padding-top: 5px;
 }

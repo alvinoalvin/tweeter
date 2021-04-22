@@ -53,7 +53,7 @@
 
         <div class="right">
           <div><b> Write </b>a new tweet</div>
-          <div class="write-tweet-arrow">
+          <div id="write-tweet-arrow">
             <i class="fas fa-angle-double-down"></i>
           </div>
         </div>
@@ -61,21 +61,22 @@
 
       <!-- The avatar -->
       <header id="header-container">
-        <div class="aligner-item-left"></div>
-        <div class="avatar">
-          <img src="/images/profile-hex.png" />
-        </div>
-        <div>
-          <h2>Alvin Ng</h2>
+        <!-- <div class="aligner-item-left"></div> -->
+        <div id="avatarContainer">
+          <div class="avatar">
+            <img src="/images/profile-hex.png" />
+            <h2>Alvin Ng</h2>
+          </div>
+          <div class="avatar-descript">“The world isn’t perfect. But it’s there for us, doing the best it can….that’s what makes it so damn beautiful.” <br> – Roy Mustang</div>
         </div>
         <div class="header-right">
-          <div class="aligner-item-right"></div>
+          <!-- <div class="aligner-item-right"></div> -->
         </div>
       </header>
 
       <!-- Page-specific (main) content here -->
       <main class="container">
-        <section class="new-tweet">
+        <section id="new-tweet">
           <div id="new-tweet-error">this is an error</div>
           <h2>Compose Tweet</h2>
           <form id="new-tweet-form" action="/tweets" method="POST">
@@ -165,7 +166,11 @@
       </main>
     </div>
     <div id="to-top">
-      <a href="#body_container"><i class="fas fa-arrow-alt-circle-up fa-2x"></i> </a> <br> Back to Top
+      <a href="#body_container"
+        ><i class="fas fa-arrow-alt-circle-up fa-2x"></i>
+      </a>
+      <br />
+      Back to Top
     </div>
   </body>
 </html>

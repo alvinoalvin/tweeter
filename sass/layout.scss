@@ -1,0 +1,115 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+@use 'variables';
+@use 'mixins';
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  background-color: variables.$body-bgc;
+
+  #body_container {
+    color: variables.$container-color;
+    background-color: variables.$container-bgc;
+    width: 100%;
+    margin: auto;
+  }
+
+  nav {
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    width: 100%;
+  }
+
+  header {
+    z-index: 1;
+  }
+
+  .container {
+    width: 90%;
+    @include mixins.flexCol();
+    margin: auto;
+    #new-tweet {
+      display: none;
+      #new-tweet-error {
+        display: none;
+      }
+    }
+    .tweet-container {
+      @include mixins.flexCol();
+      .tweet {
+        border: solid 5px;
+        padding: 20px;
+        margin: 20px 0px;
+      }
+      .tweet-header {
+        @include mixins.flexRow();
+      }
+      .tweet-main {
+        padding-bottom: 20px;
+        padding-top: 40px;
+      }
+      .tweet-footer {
+        @include mixins.flexRow();
+        margin-top: 20px;
+      }
+    }
+  }
+  #to-top {
+    position: fixed;
+    color: variables.$to-top-icon-color;
+    bottom: 2em;
+    right: 2em;
+    text-align: center;
+    display: none;
+
+    a:visited {
+      color: variables.$to-top-icon-color;
+    }
+    a:hover {
+      color: variables.$to-top-icon-hover;
+    }
+  }
+  @media only screen and (min-width: 1300px) {
+    #to-top {
+      display: none;
+    }
+    #body_container {
+    width: 1300px;
+      display: grid;
+      grid-template-areas:
+        "nav nav"
+        "header container";
+      nav {
+        grid-area: nav;
+      }
+      #header-container {
+        margin: auto;
+        margin-top: 20px;
+        grid-area: header;
+        height: auto;
+        width: 500px;
+      }
+      .container {
+        width: 700px;
+        grid-area: container;
+        // width:40vw;
+        // margin:30px;
+      }
+    }
+  }
+}
