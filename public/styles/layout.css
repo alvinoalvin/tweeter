@@ -18,9 +18,15 @@ html {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  background-color: #293764;
+}
+
+#body_container {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  width: 1170px;
+  margin: auto;
 }
 
 nav {
@@ -70,4 +76,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #body_container {
+    width: 100%;
+  }
 }
