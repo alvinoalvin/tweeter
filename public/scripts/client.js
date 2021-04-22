@@ -66,7 +66,7 @@ $(document).ready(() => {
       isValid = false;
     }
     if (input.length > 140) {
-      errorDiv.text("message has exceeded the character limit.", errorDiv);
+      outputError("message has exceeded the character limit.", errorDiv);
       isValid = false;
     }
     return isValid;
