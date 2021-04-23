@@ -77,6 +77,14 @@ $(document).ready(() => {
 
   // MAIN
   loadTweets();
+
+  $('#tweet-text').keypress(function(e) {
+    if (e.which == 13) {
+      $('#new-tweet-form').submit();
+      return false;
+    }
+  });
+
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     if (isValidMsg($("#tweet-text")[0].value)) {
