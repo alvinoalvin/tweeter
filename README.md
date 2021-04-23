@@ -23,3 +23,6 @@ This repository is the starter code for the project: Students will fork and clon
 2. Back to top button
 3. Some styling adjustments
 4. added keylistener for textarea on enter
+
+## Known issues
+1. Charcount on the front end sometimes doesn't update while pasting.
