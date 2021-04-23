@@ -2,6 +2,9 @@ const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     $(".tweet-container").prepend(createTweetElement(tweet));
   }
+  $(".need_to_be_rendered").each((index, element) => {
+    element.innerText = timeago.format(element.attributes.datetime.value);
+  });
 }
 
 const createTweetElement = (tweet) => {
@@ -26,7 +29,7 @@ const createTweetElement = (tweet) => {
           <i class="fas fa-heart"></i>
         </div>
       </div>
-    </article>`)
+    </article>`);
 };
 
 $(document).ready(() => {
@@ -37,7 +40,7 @@ $(document).ready(() => {
         renderTweets(data);
       })
       .fail((data) => {
-        console.log("Failure on loadtweets function: ", data)
+        console.log("Failure on loadtweets function: ", data);
       });
   };
   const addToDatabase = (input) => {
@@ -57,7 +60,7 @@ $(document).ready(() => {
     let outputError = (errorText, errorDiv) => {
       errorDiv.text(errorText);
       errorDiv.slideDown();
-    }
+    };
     let isValid = true;
     const errorDiv = $("#new-tweet-error");
 
@@ -82,10 +85,5 @@ $(document).ready(() => {
     $("#tweet-text")[0].value = "";
     $("#new-tweet-counter")[0].innerHTML = 140;
   });
-
-  $(".need_to_be_rendered").each((index, element) => {
-    element.innerText = timeago.format(element.attributes.datetime.value);
-  });
-
 
 });

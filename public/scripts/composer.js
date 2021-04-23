@@ -15,10 +15,9 @@ $(document).ready(function() {
     $("#new-tweet").slideToggle("slow", (() => {
       if ($("#new-tweet").css("display") === "block") {
         $("#write-tweet-arrow").html(`<i class="fas fa-angle-double-up"></i>`);
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
         $("#tweet-text").focus();
-      }
-      else {
+      } else {
         $("#write-tweet-arrow").html(`<i class="fas fa-angle-double-down"></i>`);
       }
     }));
